@@ -1,0 +1,12 @@
+.title {
+  text-decoration: none;
+  color: blueviolet;
+  font-size: 18px;
+}
+
+.title:hover,
+.title:focus {
+  text-decoration: underline;
+  color: plum;
+  font-weight: bold;
+}

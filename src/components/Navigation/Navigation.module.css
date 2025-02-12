@@ -1,0 +1,33 @@
+.header {
+  height: 80px;
+  border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.link {
+  text-decoration: none;
+  color: #2e2f42;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: #e04b69;
+}

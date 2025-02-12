@@ -1,0 +1,37 @@
+.movies {
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.button {
+  border-radius: 16px;
+  border: none;
+  width: 100px;
+  height: 30px;
+  background: #3350e9;
+  color: white;
+}
+
+.form__input {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 12px;
+  width: 300px;
+  height: 30px;
+  background-color: white;
+  padding-left: 10px;
+  outline: transparent;
+  margin-right: 10px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form__input:hover,
+.form__input:focus {
+  border: 1px solid #3350e9;
+  border-radius: 12px;
+}
