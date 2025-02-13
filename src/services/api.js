@@ -16,25 +16,25 @@ export default async function fetchMovies() {
   return response.data;
 }
 
-export async function getMovieById(movie_id) {
+export async function getMovieById(movieId) {
   const response = await axios.get(
-    `https://api.themoviedb.org/3/movie/${movie_id}`,
+    `https://api.themoviedb.org/3/movie/${movieId}`,
     options
   );
   return response.data;
 }
 
-export async function getMovieCastById(movie_id) {
+export async function getMovieCastById(movieId) {
   const response = await axios.get(
-    `https://api.themoviedb.org/3/movie/${movie_id}/credits`,
+    `https://api.themoviedb.org/3/movie/${movieId}/credits`,
     options
   );
   return response.data;
 }
 
-export async function getMovieReviewsById(movie_id) {
+export async function getMovieReviewsById(movieId) {
   const response = await axios.get(
-    `https://api.themoviedb.org/3/movie/${movie_id}/reviews`,
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews`,
     options
   );
   return response.data;

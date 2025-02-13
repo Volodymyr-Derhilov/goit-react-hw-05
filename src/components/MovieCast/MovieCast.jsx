@@ -5,7 +5,7 @@ import { getMovieCastById } from '../../services/api';
 import clsx from 'clsx';
 
 export default function MovieCast() {
-    const { movie_id } = useParams();
+    const { movieId } = useParams();
     const [actors, setActors] = useState([]);
     const [page, setPage] = useState(0);
     const [max, setMax] = useState(page + 10);
@@ -13,7 +13,7 @@ export default function MovieCast() {
     useEffect(() => {
         const getCast = async () => {
             try {
-                const { cast } = await getMovieCastById(movie_id);
+                const { cast } = await getMovieCastById(movieId);
                 setActors(cast)
             }
             catch (error)
@@ -22,7 +22,7 @@ export default function MovieCast() {
             }
         }
         getCast()
-    }, [])
+    }, [movieId])
 
     function loadImg() {
         setPage(prev => prev + max + 1);

@@ -10,6 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 //import MovieReviews from './components/MovieReviews/MovieReviews'
 //import MoviesPage from './pages/MoviesPage/MoviesPage'
 import { lazy, Suspense } from 'react'
+//import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 const Navigation = lazy(() => import('./components/Navigation/Navigation'))
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"))
@@ -17,7 +18,7 @@ const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetail
 const MovieCast = lazy(() => import('./components/MovieCast/MovieCast'))
 const MovieReviews = lazy(() => import('./components/MovieReviews/MovieReviews'))
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'))
-
+const NotFoundPage = lazy(() => import('./components/NotFoundPage/NotFoundPage'))
 
 function App() {
 
@@ -28,10 +29,11 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/movies' element={<MoviesPage />}></Route>
-          <Route path='/movies/:movie_id' element={<MovieDetailsPage />}>
+          <Route path='/movies/:movieId' element={<MovieDetailsPage />}>
             <Route path='cast' element={<MovieCast />}></Route>
             <Route path='reviews' element={<MovieReviews />}></Route>
           </Route>
+          <Route path='*' element={<NotFoundPage />}></Route>
         </Routes>
       </Suspense>
     </main>

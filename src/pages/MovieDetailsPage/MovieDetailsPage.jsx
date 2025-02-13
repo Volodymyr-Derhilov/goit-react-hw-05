@@ -5,7 +5,7 @@ import { getMovieById } from '../../services/api'
 import { GoArrowLeft } from "react-icons/go";
 
 export default function MovieDetailsPage() {
-    const { movie_id } = useParams();
+    const {movieId} = useParams();
     const [details, setDetails] = useState([])
 
     const location = useLocation();
@@ -15,7 +15,7 @@ export default function MovieDetailsPage() {
     useEffect(() => {
         const getInfo = async () => {
             try {
-                const data = await getMovieById(movie_id);
+                const data = await getMovieById(movieId);
                 setDetails(data);
             }           
             catch (error) {
@@ -23,7 +23,7 @@ export default function MovieDetailsPage() {
             }
         }
         getInfo()
-    }, [])
+    }, [movieId])
 
     return (
         <>

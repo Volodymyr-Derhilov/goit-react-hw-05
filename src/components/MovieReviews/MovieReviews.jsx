@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { getMovieReviewsById } from '../../services/api';
 
 export default function MovieReviews() {
-    const { movie_id } = useParams();
+    const { movieId } = useParams();
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const {results} = await getMovieReviewsById(movie_id);
+                const {results} = await getMovieReviewsById(movieId);
                 setReviews(results);
             }
             catch (error) {
@@ -18,7 +18,7 @@ export default function MovieReviews() {
             }
         }
         getReviews()
-    }, [])
+    }, [movieId])
 
     return (        
         <div className={css.reviews}>{!reviews.length ? <h4>We don`t have any rewiews for this movie</h4> : 
